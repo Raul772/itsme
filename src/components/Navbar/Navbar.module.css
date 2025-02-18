@@ -1,0 +1,20 @@
+.navbar {
+  background: var(--s11);
+}
+
+.navContainer {
+  max-height: 5rem;
+  min-height: 3.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  max-width: 50px;
+}
+
+.navButtons{
+  display: flex;
+  gap: 20px;
+}

@@ -1,18 +1,21 @@
-import "./App.css";
+import "./Global.css";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
+import { ClientContextProvider } from "./contexts/ClientContext";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
+      <ClientContextProvider>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+      </ClientContextProvider>
     </>
   );
 }

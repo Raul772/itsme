@@ -1,0 +1,58 @@
+:root {
+  --p1: #000d4d;
+  --p2: #020a5e;
+  --p3: #0f0f8a;
+  --p4: #2f18a0;
+  --p5: #3d2db4;
+  --p6: #543dc7;
+  --p7: #6e63de;
+  --p8: #8682ed;
+  --p9: #98a6e7;
+  --p10: #bbcaed;
+  --p11: #e5f1fb;
+  --p12: #f7fcfd;
+
+  --s1: #11004d;
+  --s2: #260462;
+  --s3: #38077e;
+  --s4: #4c1ba1;
+  --s5: #6c2fbc;
+  --s6: #9544ca;
+  --s7: #cd81e9;
+  --s8: #e5a2ec;
+  --s9: #f3bef3;
+  --s10: #f6daf5;
+  --s11: #fdedf9;
+  --s12: #fef6fb;
+
+  --n1: #000000;
+  --n2: #292929;
+  --n3: #3d3d3d;
+  --n4: #525252;
+  --n5: #666666;
+  --n6: #707070;
+  --n7: #9e9e9e;
+  --n8: #b3b3b3;
+  --n9: #c7c7c7;
+  --n10: #dbdbdb;
+  --n11: #fafafa;
+  --n12: #ffffff;
+
+  --font-primary: "inconsolata", monospace;
+  --font-secondary: "Nunito", sans-serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+  padding: 0px 20px;
+}
