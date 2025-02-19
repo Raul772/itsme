@@ -1,0 +1,15 @@
+.firstLine {
+  font-size: 3.25rem;
+  line-height: 1.23;
+  color: var(--p1);
+  font-family: var(--font-primary);
+  font-weight: bold;
+}
+
+.secondLine {
+  font-size: 7.25rem;
+  color: var(--p8);
+  font-family: var(--font-primary);
+  font-weight: bolder;
+  text-shadow: 0 0 2px var(--p2);
+}

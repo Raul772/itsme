@@ -1,0 +1,15 @@
+.hero {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  min-height: 90vh;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+@media screen and (width < 600px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

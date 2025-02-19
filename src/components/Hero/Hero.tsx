@@ -1,3 +1,12 @@
+import styles from "./Hero.module.css";
+import Photo from "./Photo";
+import TitleText from "./TitleText";
+
 export default function Hero() {
-  return <div>Hero</div>;
+  return (
+    <section id="hero" className={`container ${styles.hero}`}>
+      <Photo />
+      <TitleText />
+    </section>
+  );
 }
