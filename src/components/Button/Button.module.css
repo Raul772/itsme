@@ -1,9 +1,4 @@
-.anchor{
-  box-sizing: border-box;
-}
-
-.anchor a {
-  box-sizing: border-box;
+.button {
   background: var(--s9);
   box-shadow: inset -2px 2px 0 2px rgba(255, 255, 255, 0.6),
     inset 2px -2px 0 2px rgba(0, 0, 0, 0.2);
@@ -11,13 +6,15 @@
   padding: 7px 14px;
   font-family: var(--font-primary);
   color: var(--p1);
+  display: grid;
+  justify-content: center;
 }
 
-.anchor a:hover {
+.button:hover {
   background: var(--s10);
 }
 
-.anchor a:focus{    
-  border: 2px dotted var(--n6 );
+.button:focus {
+  border: 2px dotted var(--n6);
   outline: none;
 }

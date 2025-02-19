@@ -5,10 +5,10 @@ type AnchorProps = ComponentProps<"a"> & {
   to: string;
 };
 
-export default function Anchor({ children, to }: AnchorProps) {
+export default function Anchor({ children, to, ...props}: AnchorProps) {
   return (
     <div className={styles.anchor}>
-      <a href={`#${to}`}>{children}</a>
+      <a href={to} {...props}>{children}</a>
     </div>
   );
 }
