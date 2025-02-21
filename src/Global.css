@@ -38,7 +38,7 @@
   --n11: #fafafa;
   --n12: #ffffff;
 
-  --font-primary: "inconsolata", monospace;
+  --font-primary: "Sudo Var", "inconsolata", monospace;
   --font-secondary: "Nunito", sans-serif;
 }
 
@@ -56,7 +56,24 @@ a {
 }
 
 .container {
+  box-sizing: border-box;
   margin: auto;
   max-width: 1200px;
   padding: 0px 20px;
+}
+
+@media screen and (width < 1000px) {
+  html{
+    font-size: .8rem;
+  }
+}
+@media screen and (width < 600px) {
+  html{
+    font-size: .8rem;
+  }
+}
+@media screen and (width < 480px) {
+  html{
+    font-size: .6rem;
+  }
 }

@@ -1,15 +1,19 @@
 .hero {
-  display: grid;
-  grid-template-columns: 4fr 2fr;
+  display: flex;
+  flex-wrap: wrap-reverse;
   min-height: 90vh;
-  align-content: center;
   justify-content: center;
   align-items: center;
+  text-align: start;
   gap: 20px;
 }
 
-@media screen and (width < 600px) {
+@media screen and (width < 1000px) {
   .hero {
-    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
   }
 }
+

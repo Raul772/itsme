@@ -1,66 +1,45 @@
 .photoContainer {
-  width: 100%;
-  order: 2;
-  display: flex;
-  justify-content: center;
-}
-
-.foto {
-  display: block;
-  width: 97%;
-  height: 97%;
-  transform: rotate(-75deg) scale(-1);
-  flex-shrink: 1;
-}
-
-.fotoFrame {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
+  flex-shrink: 0;
+  width: 24rem;
   aspect-ratio: 1/1;
-  background: conic-gradient(
-    var(--p11) 64%,
-    var(--p8) 70%,
-    var(--s9) 75%,
-    var(--s12) 83%,
-    var(--p11) 90%
-  );
-  background-size: 200% 150%;
-  background-position: left bottom;
-  transform: rotate(75deg) scale(-1);
-  border: 2px solid black;
-  border-radius: 50%;
-  box-shadow: -8px -8px 2px 0 rgba(0, 0, 0, 0.1);
+  align-content: center;
+  justify-items: center;
+  background: url("../../../assets/PhotoFrame.svg");
+  background-size: cover;
+  filter: drop-shadow(-8px 8px 2px  #0000001a);
   position: relative;
 }
 
-.fotoFrame::before {
-  content: "";
-  display: inline-block;
-  width: 22%;
+.photo {
+  display: block;
+  width: 95%;
   aspect-ratio: 1/1;
-  background: url("../../../assets/Star.png") no-repeat center center;
-  background-size: cover;
-  position: absolute;
-  top: -6%;
-  left: 15%;
-  transform: rotate(calc(15deg - 75deg));
-  z-index: 3;
 }
 
-.fotoFrame::after {
+.photoContainer::before {
   content: "";
-  display: inline-block;
-  width: 16%;
+  display: block;
+  width: 5rem;
   aspect-ratio: 1/1;
-  background: url("../../../assets/Star.png") no-repeat center center;
+  background: url("../../../assets/Star.svg") center center no-repeat;
   background-size: cover;
+  bottom: 1rem;
+  left: 0.1rem;
+  transform: rotate(15deg);
   position: absolute;
-  bottom: -5%;
-  right: 22%;
-  transform: rotate(calc(-15deg - 75deg));
-  z-index: 3;
+}
+
+.photoContainer::after {
+  content: "";
+  display: block;
+  width: 3.125rem;
+  aspect-ratio: 1/1;
+  background: url("../../../assets/Star-Dark.svg") center center no-repeat;
+  background-size: cover;
+  top: 2rem;
+  right: 1.75rem;
+  transform: rotate(-15deg);
+  position: absolute;
 }
 
 @media screen and (width < 600px) {

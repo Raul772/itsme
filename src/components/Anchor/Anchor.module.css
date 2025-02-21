@@ -1,15 +1,12 @@
-.anchor{
-  box-sizing: border-box;
-}
 
 .anchor a {
-  box-sizing: border-box;
   background: var(--s9);
   box-shadow: inset -2px 2px 0 2px rgba(255, 255, 255, 0.6),
     inset 2px -2px 0 2px rgba(0, 0, 0, 0.2);
   border: 2px solid var(--n6);
   padding: 7px 14px;
   font-family: var(--font-primary);
+  font-weight: bold;
   color: var(--p1);
 }
 
@@ -17,7 +14,14 @@
   background: var(--s10);
 }
 
-.anchor a:focus{    
-  border: 2px dotted var(--n6 );
+.anchor a:focus {
+  border: 2px dotted var(--n6);
   outline: none;
+}
+
+
+@media screen and (width < 600px) {
+  .anchor a{
+    font-size: 16px;
+  }
 }

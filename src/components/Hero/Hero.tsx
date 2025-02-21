@@ -5,8 +5,8 @@ import TitleText from "./TitleText";
 export default function Hero() {
   return (
     <section id="hero" className={`container ${styles.hero}`}>
-      <Photo />
       <TitleText />
+      <Photo />
     </section>
   );
 }
