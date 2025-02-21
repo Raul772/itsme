@@ -1,5 +1,6 @@
 .hero {
   display: flex;
+  position: relative;
   flex-wrap: wrap-reverse;
   min-height: 90vh;
   justify-content: center;
