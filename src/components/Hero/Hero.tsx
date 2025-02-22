@@ -9,9 +9,11 @@ export default function Hero() {
   img.src = StarLine;
 
   return (
-    <section id="hero" className={`container ${styles.hero}`}>
-      <TitleText />
-      <Photo />
+    <section id="hero" className={`${styles.hero}`}>
+      <div className={`container ${styles.heroContainer}`}>
+        <TitleText />
+        <Photo />
+      </div>
       <MovingEntities img={img} />
     </section>
   );

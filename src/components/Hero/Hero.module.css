@@ -1,6 +1,10 @@
 .hero {
-  display: flex;
   position: relative;
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: flex;
   flex-wrap: wrap-reverse;
   min-height: 90vh;
   justify-content: center;
@@ -10,11 +14,10 @@
 }
 
 @media screen and (width < 1000px) {
-  .hero {
+  .heroContainer {
     gap: 40px;
     text-align: center;
     flex-wrap: nowrap;
     flex-direction: column-reverse;
   }
 }
-
