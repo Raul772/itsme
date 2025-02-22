@@ -1,15 +1,12 @@
-import StarLine from "../../../../assets/Star-Line.svg";
-import Star from "./Star";
-import styles from "./Stars.module.css";
+import Entity from "./Entity";
+import styles from "./MovingEntities.module.css";
 
-export default function Stars() {
-  const NUMBER_STARS = 10;
+export default function MovingEntities({ img }: { img: HTMLImageElement }) {
+  const NUMBER_STARS = 20;
   let context: CanvasRenderingContext2D | null;
 
   function draw(canvas: null | HTMLCanvasElement) {
-    const stars: Star[] = [];
-    const img = document.createElement("img");
-    img.src = StarLine;
+    const entities: Entity[] = [];
 
     if (canvas && img.complete) {
       context = canvas.getContext("2d");
@@ -20,27 +17,27 @@ export default function Stars() {
       canvas.height = innerHeight;
 
       for (let i = 0; i < NUMBER_STARS; i++) {
-        stars.push(starCreator());
+        entities.push(starCreator());
       }
 
       function starCreator() {
-        const x = Math.random() * innerWidth + innerWidth;
+        const x = Math.random() * 1.5 * innerWidth;
         const y = Math.random() * innerHeight + innerHeight;
-        return new Star(img, x, y);
+        return new Entity(img, x, y);
       }
 
       (function updateFrame() {
         if (context && canvas) {
           context.clearRect(0, 0, canvas.width, canvas.height);
 
-          stars.forEach((star, i) => {
-            if (star.isExpired) {
-              stars.splice(i, 1);
-              stars.push(starCreator());
+          entities.forEach((entity, i) => {
+            if (entity.isExpired) {
+              entities.splice(i, 1);
+              entities.push(starCreator());
             } else {
-              star.move();
-              star.Expire();
-              if (context) star.render(context);
+              entity.move();
+              entity.Expire();
+              if (context) entity.render(context);
             }
           });
         }
@@ -55,6 +52,6 @@ export default function Stars() {
       ref={draw}
       width={300}
       height={300}
-      className={styles.stars}></canvas>
+      className={styles.entities}></canvas>
   );
 }
