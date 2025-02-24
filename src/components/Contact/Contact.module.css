@@ -1,0 +1,14 @@
+.contact {
+  padding: 7.5rem 0px;
+  background: var(--s10);
+}
+
+.contactContainer h2 {
+  margin-bottom: 3.3125rem;
+}
+
+.contactElementsHolder {
+  display: flex;
+  justify-content: center;
+  gap: 1.125rem;
+}
