@@ -24,15 +24,14 @@ export default function Navbar() {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  
   }, []);
-
-
 
   return (
     <div className={styles.navbar}>
       <div className={`container ${styles.navContainer}`}>
-        <img className={styles.logo} src={logo} alt="" />
+        <a href="#hero">
+          <img className={styles.logo} src={logo} alt="" />
+        </a>
         <div ref={navbar}>
           {isMobile && (
             <Button aria-label="Menu" onClick={() => setOpenMenu(!openMenu)}>
