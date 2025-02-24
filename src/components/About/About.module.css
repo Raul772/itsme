@@ -36,13 +36,10 @@
   margin: 60px auto;
   border: 2px solid black;
   background: white;
+  filter: var(--drop-shadow);
 }
 
 .aboutBox h2 {
-  font-family: var(--font-primary);
-  color: var(--p1);
-  font-size: 3.25rem;
-  text-align: center;
   padding: 1.6rem;
   border-bottom: 2px solid black;
 }

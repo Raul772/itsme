@@ -13,7 +13,7 @@ export default function About() {
         </div>
 
         <div className={styles.aboutBox}>
-          <h2>Sobre mim</h2>
+          <h2 className="title">Sobre mim</h2>
           <p>
             Sou graduando em fase final do curso de{" "}
             <span className="highlight">Sistemas de Informação</span> com

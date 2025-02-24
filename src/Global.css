@@ -40,6 +40,8 @@
 
   --font-primary: "Sudo Var", "inconsolata", monospace;
   --font-secondary: "Nunito", sans-serif;
+
+  --drop-shadow: drop-shadow(-8px 8px 2px #0000001a);
 }
 
 /* TAG STYLING */
@@ -69,6 +71,13 @@ a {
 .highlight {
   color: var(--p1);
   font-weight: bold;
+}
+
+.title {
+  font-family: var(--font-primary);
+  color: var(--p1);
+  font-size: 3.25rem;
+  text-align: center;
 }
 
 /* MEDIA QUERIES STYLING */
