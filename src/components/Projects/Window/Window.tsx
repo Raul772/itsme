@@ -15,7 +15,6 @@ export default function Window() {
         <WindowTitleBar></WindowTitleBar>
         <div className={styles.windowContentContainer}>
           <div className={styles.windowContentList}>
-           
             {Projetos.map((e) => (
               <WindowContentCard
                 key={e.title}
@@ -23,7 +22,6 @@ export default function Window() {
                 data={e}
               />
             ))}
-
           </div>
 
           <div className={styles.windowContentDetails}>
