@@ -1,0 +1,10 @@
+.footer {
+  width: 100vw;
+  height: 3rem;
+  background: var(--p6);
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  color: var(--s12);
+  text-align: center;
+  align-content: center;
+}
