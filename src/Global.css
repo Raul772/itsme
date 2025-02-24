@@ -42,6 +42,10 @@
   --font-secondary: "Nunito", sans-serif;
 
   --drop-shadow: drop-shadow(-8px 8px 2px #0000001a);
+  --button-3d-pulled: inset -2px 2px 0 2px rgba(255, 255, 255, 0.6),
+    inset 2px -2px 0 2px rgba(0, 0, 0, 0.2);
+  --button-3d-pushed: inset -4px 4px 0 0px rgba(0, 0, 0, 0.2),
+    inset 4px -4px 0 0px rgba(255, 255, 255, 0.6);
 }
 
 /* TAG STYLING */

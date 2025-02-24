@@ -1,7 +1,6 @@
 .button {
   background: var(--s9);
-  box-shadow: inset -2px 2px 0 2px rgba(255, 255, 255, 0.6),
-    inset 2px -2px 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--button-3d-pulled);
   border: 2px solid var(--n6);
   padding: 7px 14px;
   font-family: var(--font-primary);

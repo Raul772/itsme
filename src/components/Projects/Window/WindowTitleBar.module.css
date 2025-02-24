@@ -1,0 +1,21 @@
+.windowTitleBar {
+  background: linear-gradient(to right, var(--p11), var(--s9));
+  height: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 1rem;
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: var(--p1);
+}
+
+.windowTitleBarButtons {
+  width: auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(16px, auto);
+  gap: 0.625rem;
+}

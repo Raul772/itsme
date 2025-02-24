@@ -1,0 +1,40 @@
+.windowContentCard {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 1.25rem;
+  background: var(--s9);
+  border: none;
+  box-shadow: var(--button-3d-pulled);
+  cursor: pointer;
+}
+
+.windowContentCard:hover {
+  background: var(--s10);
+}
+
+.windowContentCard:active,
+.windowContentCard:focus {
+outline: none;
+  border: 2px dotted var(--n6);
+}
+
+.windowContentCard > p {
+  font-weight: bold;
+  text-align: left;
+  padding: 0 0 12px 0px;
+  border-bottom: 1px solid var(--p9);
+}
+
+.windowContentCardTitle {
+  font-family: var(--font-primary);
+  color: var(--p5);
+  font-size: 1.5rem;
+}
+
+.windowContentCardTags {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: 5px;
+}

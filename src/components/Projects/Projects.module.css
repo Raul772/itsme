@@ -1,0 +1,11 @@
+.projects {
+  background: url("../../../assets//distorted_grid.svg") no-repeat center center;
+  background-size: cover;
+}
+.projectsContainer {
+  padding: 7.5rem 0px;
+}
+
+.projectsContainer > h2 {
+  margin-bottom: 7.5rem;
+}
