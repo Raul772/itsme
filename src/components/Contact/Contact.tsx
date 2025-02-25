@@ -20,8 +20,9 @@ export default function Contact() {
             Github
           </Element>
           <Element
+          shortcut
             img={document}
-            href="../../assets/Currículo Raul Victor.pdf">
+            href="https://drive.google.com/file/d/1QeyzetkbqU44_2stuSDrwIgQvL_tdsNk/view?usp=sharing">
             Currículo
           </Element>
         </div>
