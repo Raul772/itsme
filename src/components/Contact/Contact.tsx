@@ -21,7 +21,7 @@ export default function Contact() {
           </Element>
           <Element
             img={document}
-            href="/assets/Currículo Raul Victor.pdf">
+            href="../../assets/Currículo Raul Victor.pdf">
             Currículo
           </Element>
         </div>
