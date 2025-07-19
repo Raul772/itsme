@@ -22,7 +22,7 @@ export default function Contact() {
           <Element
           shortcut
             img={document}
-            href="https://drive.google.com/file/d/1QeyzetkbqU44_2stuSDrwIgQvL_tdsNk/view?usp=sharing">
+            href="https://drive.google.com/file/d/144dERAk8PgpqM2d2qq6bZMPNrslCFETy/view?usp=sharing">
             Currículo
           </Element>
         </div>

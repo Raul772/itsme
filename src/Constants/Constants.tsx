@@ -1,7 +1,5 @@
-import clock from "../../assets/Clock.jpg";
 import convergencia from "../../assets/Convergencia.png";
 import lumixus from "../../assets/Lumixus.png";
-import portifolio from "../../assets/Portifolio.jpg";
 import { IWDCData } from "../components/Projects/Window/WindowContentCard/WindowContentCard";
 
 export const Projetos: IWDCData[] = [
@@ -14,12 +12,18 @@ export const Projetos: IWDCData[] = [
     href: "https://raul772.github.io/Project-Ferias/",
   },
   {
-    title: "Clock",
+    title: "VLConnect",
     description:
-      "Um dos primeiros projetos que criei sozinho apenas usando HTML, CSS e JavaScript durante o aprendizado nessas tecnologias!",
-    tags: ["CSS", "HTML", "JAVASCRIPT"],
-    img: clock,
-    href: "https://raul772.github.io/relogio-web/",
+      "Um app React Native para controle remoto do VLC Media Player via rede local.",
+    tags: ["REACTNATIVE", "TYPESCRIPT"],
+    href: "https://github.com/Raul772/VLConnect",
+  },
+  {
+    title: "Optify",
+    description:
+      "O Optify é um aplicativo desenvolvido para ajudar a melhorar a saúde e o bem-estar no ambiente de trabalho ou estudo, lembrando os usuários de pausas regulares, se hidratarem e sobre a regra 20-20-20.",
+    tags: ["PYTHON"],
+    href: "https://github.com/Raul772/Optify",
   },
   {
     title: "Convergência Léxica",
@@ -28,13 +32,5 @@ export const Projetos: IWDCData[] = [
     tags: ["CSS", "HTML", "JAVASCRIPT", "ELECTRON"],
     img: convergencia,
     href: "https://github.com/Raul772/LexicalConvergence",
-  },
-  {
-    title: "Portifólio",
-    description:
-      "O site que você está acessando agora! Essa é a versão mais recente do meu portifólio, a qual trabalhei desde o protótipo estudando a estética Y2K. Existem versões mais antigas do meu portifólio, mas, sem dúvidas, essa é a que comunica melhor a minha personalidade!",
-    tags: ["CSS", "HTML", "TYPESCRIPT", "REACT"],
-    img: portifolio,
-    href: "https://github.com/Raul772/itsme",
   },
 ];

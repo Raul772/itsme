@@ -5,6 +5,7 @@ import html from "../../../../../assets/Html.svg";
 import javascript from "../../../../../assets/JavaScript.svg";
 import react from "../../../../../assets/React.svg";
 import typescript from "../../../../../assets/TypeScript.svg";
+import python from "../../../../../assets/Python.svg";
 
 export const WCCTAGS = {
   HTML: html,
@@ -14,4 +15,6 @@ export const WCCTAGS = {
   REACT: react,
   BOOTSTRAP: bootstrap,
   ELECTRON: electron,
+  REACTNATIVE: react,
+  PYTHON: python,
 };
