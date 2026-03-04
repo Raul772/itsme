@@ -1,4 +1,5 @@
 import styles from "./Link.module.css";
+import code from "../../../assets/code.svg";
 
 type LinkProps = {
   href?: string;
@@ -21,7 +22,7 @@ export default function Link({
       <div
         className={`${styles.elementSelection} ${shortcut && styles.shortcut}`}>
         <div className={styles.elementOverlay}></div>
-        <img className={styles.elementImage} src={img || undefined} alt="" />
+        <img className={styles.elementImage} src={img || code} alt="" />
       </div>
       <p className={styles.elementTitle}>{children}</p>
     </div>
