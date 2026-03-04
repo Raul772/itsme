@@ -1,6 +1,8 @@
 .projects {
   background: url("../../../assets//distorted_grid.svg") no-repeat center center;
   background-size: cover;
+  min-height: 100vh;
+  position: relative;
 }
 .projectsContainer {
   padding: 7.5rem 0px;
@@ -8,4 +10,11 @@
 
 .projectsContainer > h2 {
   margin-bottom: 7.5rem;
+}
+
+.projectsIconContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  place-items: center;
+  gap: 5rem;
 }

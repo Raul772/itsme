@@ -1,0 +1,9 @@
+.badge{
+  display: flex;
+  gap: .2rem;
+  justify-content: center;
+  padding: 4px 0px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-family: var(--font-primary);
+}
