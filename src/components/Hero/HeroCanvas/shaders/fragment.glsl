@@ -19,7 +19,5 @@ void main() {
     color = mix(color, uColor3, smoothstep(0.33, 0.66, mixStrength));
     color = mix(color, uColor4, smoothstep(0.66, 1.0, mixStrength));
 
-    color = color * uIntensity;
-
-    gl_FragColor = vec4(color, 1.0);
+    gl_FragColor = vec4(color, uIntensity);
 }
