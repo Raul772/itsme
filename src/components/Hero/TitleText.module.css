@@ -4,16 +4,15 @@
 .firstLine {
   font-size: 3.25rem;
   line-height: 1.23;
-  color: var(--p1);
+  color: var(--p5);
   font-family: var(--font-primary);
   font-weight: bold;
 }
 .secondLine {
   font-size: 7.25rem;
-  color: var(--p8);
+  color: var(--p2);
   font-family: var(--font-primary);
   font-weight: bolder;
-  text-shadow: 0 0 2px var(--p2);
 }
 
 @media screen and (width < 1000px) {

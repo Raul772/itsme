@@ -75,13 +75,13 @@ a {
 }
 
 .highlight {
-  color: var(--p1);
+  color: var(--p3);
   font-weight: bold;
 }
 
 .title {
   font-family: var(--font-primary);
-  color: var(--p1);
+  color: var(--p3);
   font-size: 3.25rem;
   text-align: center;
 }
