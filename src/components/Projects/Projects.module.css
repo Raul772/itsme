@@ -1,7 +1,6 @@
 .projects {
   background: url("../../../assets//distorted_grid.svg") no-repeat center center;
   background-size: cover;
-  min-height: 100vh;
   position: relative;
 }
 .projectsContainer {
