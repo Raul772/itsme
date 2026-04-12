@@ -1,6 +1,6 @@
 import StarLine from "../../../assets/Star-Line.svg";
+import Canvas from "./HeroCanvas/HeroCanvas";
 import styles from "./Hero.module.css";
-import MovingEntities from "./MovingEntities/MovingEntities";
 import Photo from "./Photo";
 import TitleText from "./TitleText";
 
@@ -14,7 +14,8 @@ export default function Hero() {
         <TitleText />
         <Photo />
       </div>
-      <MovingEntities img={img} />
+      <Canvas />
+      {/* <MovingEntities img={img} /> */}
     </section>
   );
 }
