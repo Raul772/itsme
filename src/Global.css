@@ -1,29 +1,29 @@
 :root {
-  --p1: #000d4d;
-  --p2: #020a5e;
-  --p3: #0f0f8a;
-  --p4: #2f18a0;
-  --p5: #3d2db4;
-  --p6: #543dc7;
-  --p7: #6e63de;
-  --p8: #8682ed;
-  --p9: #98a6e7;
-  --p10: #bbcaed;
-  --p11: #e5f1fb;
-  --p12: #f7fcfd;
+  --p1: #05083a;
+  --p2: #0a1165;
+  --p3: #161e8e;
+  --p4: #272bae;
+  --p5: #3e3bc8;
+  --p6: #584ddb; 
+  --p7: #7368e7;
+  --p8: #918def;
+  --p9: #b0b5f5; 
+  --p10: #cde0f9;
+  --p11: #e4f1fc;
+  --p12: #f4fafe; 
 
-  --s1: #11004d;
-  --s2: #260462;
-  --s3: #38077e;
-  --s4: #4c1ba1;
-  --s5: #6c2fbc;
-  --s6: #9544ca;
-  --s7: #cd81e9;
-  --s8: #e5a2ec;
-  --s9: #f3bef3;
-  --s10: #f6daf5;
-  --s11: #fdedf9;
-  --s12: #fef6fb;
+  --s1: #150236;
+  --s2: #29055e;
+  --s3: #420c82;
+  --s4: #5e1aa1;
+  --s5: #7b2db8;
+  --s6: #9a48ca; 
+  --s7: #b96adb;
+  --s8: #d593e8;
+  --s9: #eabaef;
+  --s10: #f6daf5; 
+  --s11: #faebf9;
+  --s12: #fef6fc; 
 
   --n1: #000000;
   --n2: #292929;
@@ -45,7 +45,8 @@
   --box-shadow: -8px 8px 2px #0000001a;
   --button-3d-pulled: inset -2px 2px 0 2px rgba(255, 255, 255, 0.6),
     inset 2px -2px 0 2px rgba(0, 0, 0, 0.2);
-  --button-3d-pushed: inset -4px 4px 0 0px rgba(0, 0, 0, 0.2),
+  --button-3d-pushed:
+    inset -4px 4px 0 0px rgba(0, 0, 0, 0.2),
     inset 4px -4px 0 0px rgba(255, 255, 255, 0.6);
 }
 
