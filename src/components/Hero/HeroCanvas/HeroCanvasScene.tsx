@@ -14,9 +14,9 @@ import { CustomPlaneMaterialType } from "./types/CustomPlaneMaterialType";
 const CustomPlaneMaterial = shaderMaterial(
   {
     uColor1: new THREE.Color("#f6daf5"), 
-    uColor2: new THREE.Color("#e5f1fb"), 
-    uColor3: new THREE.Color("#98a6e7"), 
-    uColor4: new THREE.Color("#f3bef3"), 
+    uColor2: new THREE.Color("#e4f1fc"), 
+    uColor3: new THREE.Color("#cde0f9"), 
+    uColor4: new THREE.Color("#faebf9"), 
     uIntensity: 1,
     uTime: 0,
   },
@@ -43,7 +43,7 @@ export default function Scene() {
         <planeGeometry args={[25, 25, 128, 128]} />
         <customPlaneMaterial
           ref={materialRef}
-          uIntensity={1}
+          uIntensity={0.9}
           wireframe={false}
         />
       </mesh>

@@ -59,11 +59,11 @@ float snoise(vec3 v) {
 void main() {
     vUv = uv;
 
-    float waveFrequency = 0.125; 
+    float waveFrequency = 0.150; 
     float waveAmplitude = 2.5; 
     float waveSpeed = 0.1;  
 
-    float colorFrequency = 0.08; 
+    float colorFrequency = 0.1; 
     float colorSpeed = 0.05;  
 
 
