@@ -1,13 +1,16 @@
 .window {
+  position: absolute;
+  max-width: 600px;
   border: 2px solid var(--n9);
-  filter: var(--drop-shadow);
+  box-shadow: var(--box-shadow);
+  user-select: none;
 }
 
 .windowContentContainer {
   background: var(--p10);
   padding: 30px;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  /* grid-template-columns: 1fr 1.2fr; */
   gap: 50px;
 }
 
@@ -88,7 +91,15 @@
   font-family: var(--font-primary);
   font-weight: bold;
   color: var(--p5);
-  border-radius: 50px;
+  /* border-radius: 50px; */
+}
+
+.open {
+  display: block;
+}
+
+.closed {
+  display: none;
 }
 
 @media screen and (width < 600px) {

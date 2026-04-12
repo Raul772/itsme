@@ -1,4 +1,4 @@
-import foto from "../../../assets/Foto.png";
+import foto from "../../../assets/Foto.jpg";
 import styles from "./Photo.module.css";
 
 export default function Photo() {
