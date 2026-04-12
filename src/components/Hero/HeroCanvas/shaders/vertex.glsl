@@ -1,7 +1,7 @@
 uniform float uTime;
 
 varying vec2 vUv;
-varying float vElevation;
+varying float vNoise;
 
 // --- Função Simplex Noise 3D (Ashima Arts) ---
 vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
@@ -59,16 +59,20 @@ float snoise(vec3 v) {
 void main() {
     vUv = uv;
 
-    float frequency = 0.125; 
-    float amplitude = 2.5; 
-    float speed = 0.1;     
+    float waveFrequency = 0.125; 
+    float waveAmplitude = 2.5; 
+    float waveSpeed = 0.1;  
 
-    float elevation = snoise(vec3(position.x * frequency, position.y * frequency, uTime * speed)) * amplitude;
-    
-    vElevation = elevation;
+    float colorFrequency = 0.08; 
+    float colorSpeed = 0.05;  
 
+
+    float physicalNoise = snoise(vec3(position.x * waveFrequency, position.y * waveFrequency, uTime * waveSpeed));
     vec3 newPosition = position;
-    newPosition.z += elevation;
+    newPosition.z += physicalNoise * waveAmplitude;
+
+    vec3 colorOffset = vec3(100.0, 50.0, 0.0);
+    vNoise = snoise(vec3(position.x * colorFrequency, position.y * colorFrequency, uTime * colorSpeed) + colorOffset);
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
 }

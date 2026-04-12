@@ -1,17 +1,25 @@
-uniform vec3 uColor;
-varying vec2 vUv;
-varying float vElevation;
+uniform vec3 uColor1;
+uniform vec3 uColor2;
+uniform vec3 uColor3;
+uniform vec3 uColor4;
+uniform float uIntensity;
+
+// varying vec2 vUv;
+varying float vNoise;
 
 void main() {
-    // Normalizamos a elevação (assumindo que varia mais ou menos entre -1.5 e 1.5)
-    // para um valor entre 0.0 e 1.0 para atuar como intensidade
-    float intensity = (vElevation + 1.5) / 3.0;
-    
-    // Mistura uma versão mais escura com uma versão mais clara da sua cor base
-    vec3 shadowColor = uColor * 0.2;
-    vec3 highlightColor = uColor * 1.5;
-    
-    vec3 finalColor = mix(shadowColor, highlightColor, intensity);
+    float mixStrength = ((vNoise * 2.3) + 1.0) / 2.0;
+    // float debugValue = (vNoise + 1.0) / 2.0;
 
-    gl_FragColor = vec4(finalColor, 1.0);
+    mixStrength = clamp(mixStrength, 0.0 , 1.0);
+    
+    vec3 color = uColor1;
+
+    color = mix(color, uColor2, smoothstep(0.0, 0.33, mixStrength));
+    color = mix(color, uColor3, smoothstep(0.33, 0.66, mixStrength));
+    color = mix(color, uColor4, smoothstep(0.66, 1.0, mixStrength));
+
+    color = color * uIntensity;
+
+    gl_FragColor = vec4(color, 1.0);
 }
