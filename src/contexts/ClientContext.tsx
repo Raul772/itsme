@@ -1,11 +1,11 @@
 import { createContext, PropsWithChildren, useContext } from "react";
 import useMatchMedia from "../hooks/useMatchMedia";
 
-type IClientContext = {
+type ClientContextType = {
   isMobile: boolean;
 };
 
-const ClientContext = createContext<IClientContext | null>(null);
+const ClientContext = createContext<ClientContextType | null>(null);
 
 export const useClientContext = () => {
   const context = useContext(ClientContext);

@@ -1,0 +1,31 @@
+.windowButton {
+  aspect-ratio: 1/1;
+  outline: none;
+  border: none;
+  background: var(--p9);
+  box-shadow: var(--button-3d-pulled);
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+  min-width: 16px;
+  width: 2.25rem;
+}
+
+.windowButton:hover {
+  background: var(--p10);
+}
+
+.windowButton:active,
+.windowButton:focus {
+  border: 2px dotted var(--n6);
+}
+
+.windowButton:disabled {
+  background: var(--n9);
+  cursor: initial;
+}
+
+.windowButton img {
+  width: 100%;
+  object-fit: cover;
+}

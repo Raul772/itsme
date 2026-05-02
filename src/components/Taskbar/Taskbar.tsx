@@ -1,0 +1,86 @@
+import { useEffect, useRef, useState } from "react";
+import logo from "../../../assets/brand.png";
+import downArrow from "../../../assets/down-arrow.svg";
+import { useClientContext } from "../../contexts/ClientContext";
+import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
+import Window from "../../types/Window";
+import About from "../About/About";
+import Button from "../Button/Button";
+import styles from "./Taskbar.module.css";
+
+export default function Taskbar() {
+  const { isMobile } = useClientContext();
+  const { windows, setWindows } = useDesktopEnvContext();
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+
+  const taskbar = useRef<HTMLDivElement | null>(null);
+
+  function handleWindowOpen(window: Window) {
+    const openedWindow = windows && windows.get(window.title);
+
+    if (windows && openedWindow) {
+      console.log(windows);
+      return;
+    }
+
+    setWindows((windows) => {
+      if (!windows) return new Map([[window.title, window]]);
+      return new Map([...windows, [window.title, window]]);
+    });
+  }
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (!taskbar.current?.contains(e.target as Node)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  }, []);
+
+  return (
+    <div className={styles.taskbar}>
+      <div className={`container ${styles.taskbarContainer}`}>
+        <a href="#hero">
+          <img className={styles.logo} src={logo} alt="" />
+        </a>
+        <div ref={taskbar}>
+          {isMobile && (
+            <Button aria-label="Menu" onClick={() => setOpenMenu(!openMenu)}>
+              <img style={{ maxWidth: "20px" }} src={downArrow} alt="" />
+            </Button>
+          )}
+
+          <nav
+            className={`
+              ${isMobile ? styles.navMobile : styles.navDesktop}
+              ${openMenu && styles.navMobileActive}
+          `}>
+            {/* 
+              TODO: 
+                - Add pages to the taskbar
+            */}
+            <Button
+              aria-label="About"
+              key={"About"}
+              onClick={() =>
+                handleWindowOpen({
+                  id: crypto.randomUUID(),
+                  title: "About",
+                  content: <About />,
+                  isMinimized: false,
+                })
+              }>
+              <img style={{ maxWidth: "20px" }} src={downArrow} alt="" />
+            </Button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  );
+}
