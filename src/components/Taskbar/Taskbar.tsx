@@ -6,6 +6,9 @@ import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
 import Window from "../../types/Window";
 import About from "../About/About";
 import Button from "../Button/Button";
+import Contact from "../Contact/Contact";
+import Footer from "../Footer/Footer";
+import Projects from "../Projects/Projects";
 import styles from "./Taskbar.module.css";
 
 export default function Taskbar() {
@@ -61,10 +64,6 @@ export default function Taskbar() {
               ${isMobile ? styles.navMobile : styles.navDesktop}
               ${openMenu && styles.navMobileActive}
           `}>
-            {/* 
-              TODO: 
-                - Add pages to the taskbar
-            */}
             <Button
               aria-label="About"
               key={"About"}
@@ -76,7 +75,46 @@ export default function Taskbar() {
                   isMinimized: false,
                 })
               }>
-              <img style={{ maxWidth: "20px" }} src={downArrow} alt="" />
+              Sobre mim
+            </Button>
+            <Button
+              aria-label="Projects"
+              key={"Projects"}
+              onClick={() =>
+                handleWindowOpen({
+                  id: crypto.randomUUID(),
+                  title: "Projects",
+                  content: <Projects />,
+                  isMinimized: false,
+                })
+              }>
+              Projetos
+            </Button>
+            <Button
+              aria-label="Contact"
+              key={"Contact"}
+              onClick={() =>
+                handleWindowOpen({
+                  id: crypto.randomUUID(),
+                  title: "Contact",
+                  content: <Contact />,
+                  isMinimized: false,
+                })
+              }>
+              Contatos
+            </Button>
+            <Button
+              aria-label="Footer"
+              key={"Footer"}
+              onClick={() =>
+                handleWindowOpen({
+                  id: crypto.randomUUID(),
+                  title: "Footer",
+                  content: <Footer />,
+                  isMinimized: false,
+                })
+              }>
+              Créditos
             </Button>
           </nav>
         </div>

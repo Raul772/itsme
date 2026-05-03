@@ -34,7 +34,7 @@
 .navMobile {
   opacity: 0;
   position: absolute;
-  top: calc(50% + 35px);
+  bottom: calc(50% + 35px);
   right: 20px;
   display: flex;
   flex-direction: column;

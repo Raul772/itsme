@@ -1,5 +1,6 @@
 import "./Global.css";
 import DesktopEnvironment from "./components/DesktopEnvironment/DesktopEnvironment";
+import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Taskbar from "./components/Taskbar/Taskbar";
 import { ClientContextProvider } from "./contexts/ClientContext";

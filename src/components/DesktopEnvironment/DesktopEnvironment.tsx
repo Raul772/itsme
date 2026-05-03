@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
 import Taskbar from "../Taskbar/Taskbar";
 import Window from "../Window/Window";
+import styles from "./DesktopEnvironment.module.css";
 
 export default function DesktopEnvironment() {
   const { windows, setWindows } = useDesktopEnvContext();
@@ -9,7 +9,7 @@ export default function DesktopEnvironment() {
   return (
     <>
       <Taskbar />
-      <article>
+      <article className={styles.desktopEnvironment}>
         {windows &&
           Array.from(windows.entries()).map(([title, window]) => (
             <Window

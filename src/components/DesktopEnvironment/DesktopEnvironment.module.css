@@ -1,0 +1,8 @@
+.desktopEnvironment {
+  position: absolute;
+  height: 100svh;
+  width: 100svw;
+  overflow: auto;
+  top: 0;
+  z-index: 0;
+}

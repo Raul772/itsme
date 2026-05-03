@@ -18,7 +18,7 @@ export default function Projects() {
           {Projetos.map((p) => (
             <div key={p.title}>
               <Badge type="PROJECTTAGS" content={p.tags}>
-                <Link img={p.img!} onDoubleClick={() => { setData(p); setIsOpen(true); }} >
+                <Link img={p.img!} onClick={() => { setData(p); setIsOpen(true); }} >
                   {p.title}
                 </Link>
               </Badge>

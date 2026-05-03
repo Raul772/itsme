@@ -53,15 +53,18 @@ export default function Window({
     return (
       <div
         ref={windowRef}
-        className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}>
-        <WindowTitleBar style={{ cursor: isDragging ? "grabbing" : "grab" }}>
+        className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}>
+        <WindowTitleBar
+          style={{ cursor: isDragging ? "grabbing" : "grab" }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}>
           {title}
         </WindowTitleBar>
-        <div className={styles.windowContentContainer}>{content}</div>
+        <div className={styles.windowContentContainer}>
+          <div className={styles.windowContent}>{content}</div>
+        </div>
       </div>
     );
 }
