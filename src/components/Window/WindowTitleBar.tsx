@@ -10,7 +10,7 @@ export default function WindowTitleBar({
   onMouseUp,
   onMouseLeave,
 }: {
-  children?: string;
+  children: string;
   style?: React.CSSProperties;
   onMouseDown: React.MouseEventHandler<HTMLDivElement>;
   onMouseMove: React.MouseEventHandler<HTMLDivElement>;
@@ -36,7 +36,7 @@ export default function WindowTitleBar({
           onClick={() => {
             setWindows((prev) => {
               const newWindows = new Map(prev);
-              newWindows.delete(children || "");
+              newWindows.delete(children);
               return newWindows;
             });
           }}

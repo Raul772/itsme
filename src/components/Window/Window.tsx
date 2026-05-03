@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
 import styles from "./Window.module.css";
 import WindowTitleBar from "./WindowTitleBar";
 
@@ -19,6 +20,7 @@ export default function Window({
   const windowRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState<Position>({ x: 0, y: 0 });
+  const { windows, setWindows } = useDesktopEnvContext();
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!windowRef.current) return;
@@ -49,9 +51,33 @@ export default function Window({
     setIsDragging(false);
   };
 
+  const handleWindowMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    if (windowRef.current) {
+      setWindows((prevWindows) => {
+        if (prevWindows) {
+          const windowData = prevWindows.get(title);
+          if (windowData) {
+            const newWindows = new Map(prevWindows);
+            newWindows.delete(title);
+            newWindows.set(title, {
+              id: windowData!.id,
+              title,
+              content,
+              isMinimized: false,
+            });
+            return newWindows;
+          }
+        }
+        return prevWindows;
+      });
+    }
+  };
+
   if (content)
     return (
       <div
+        onMouseDown={handleWindowMouseDown}
         ref={windowRef}
         className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}>
         <WindowTitleBar
