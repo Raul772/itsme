@@ -21,10 +21,7 @@ export default function Taskbar() {
   function handleWindowOpen(window: Window) {
     const openedWindow = windows && windows.get(window.title);
 
-    if (windows && openedWindow) {
-      console.log(windows);
-      return;
-    }
+    if (windows && openedWindow) return;
 
     setWindows((windows) => {
       if (!windows) return new Map([[window.title, window]]);

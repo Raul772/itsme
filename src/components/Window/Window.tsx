@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Window.module.css";
 import WindowTitleBar from "./WindowTitleBar";
 
@@ -20,9 +19,9 @@ export default function Window({
   const windowRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState<Position>({ x: 0, y: 0 });
-  const { windows, setWindows } = useDesktopEnvContext();
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    bringToFront();
     if (!windowRef.current) return;
 
     const rect = windowRef.current.getBoundingClientRect();
@@ -51,35 +50,40 @@ export default function Window({
     setIsDragging(false);
   };
 
-  const handleWindowMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    e.stopPropagation();
-    if (windowRef.current) {
-      setWindows((prevWindows) => {
-        if (prevWindows) {
-          const windowData = prevWindows.get(title);
-          if (windowData) {
-            const newWindows = new Map(prevWindows);
-            newWindows.delete(title);
-            newWindows.set(title, {
-              id: windowData!.id,
-              title,
-              content,
-              isMinimized: false,
-            });
-            return newWindows;
-          }
-        }
-        return prevWindows;
-      });
-    }
+  const bringToFront = () => {
+    if (!windowRef.current) return;
+    const currentEl = windowRef.current;
+
+    const allWindows = Array.from(
+      document.querySelectorAll<HTMLElement>('[data-os-window="true"]'),
+    );
+
+    allWindows.sort((a, b) => {
+      const zA = parseInt(a.style.zIndex || "10", 10);
+      const zB = parseInt(b.style.zIndex || "10", 10);
+      return zA - zB;
+    });
+
+    const reorderedWindows = allWindows.filter((w) => w !== currentEl);
+    reorderedWindows.push(currentEl);
+
+    reorderedWindows.forEach((w, index) => {
+      w.style.zIndex = (10 + index).toString();
+    });
   };
+
+  useEffect(() => {
+    bringToFront();
+  }, []);
 
   if (content)
     return (
       <div
-        onMouseDown={handleWindowMouseDown}
+        onMouseDown={bringToFront}
         ref={windowRef}
-        className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}>
+        className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}
+        data-os-window="true"
+        autoFocus>
         <WindowTitleBar
           style={{ cursor: isDragging ? "grabbing" : "grab" }}
           onMouseDown={handleMouseDown}
