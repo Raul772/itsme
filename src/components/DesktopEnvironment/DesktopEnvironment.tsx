@@ -4,7 +4,7 @@ import Window from "../Window/Window";
 import styles from "./DesktopEnvironment.module.css";
 
 export default function DesktopEnvironment() {
-  const { windows, setWindows } = useDesktopEnvContext();
+  const { windows } = useDesktopEnvContext();
 
   return (
     <>

@@ -5,17 +5,15 @@ import styles from "./WindowTitleBar.module.css";
 export default function WindowTitleBar({
   children,
   style,
-  onMouseDown,
-  onMouseMove,
-  onMouseUp,
-  onMouseLeave,
+  onPointerDown,
+  onPointerMove,
+  onPointerUp,
 }: {
   children: string;
   style?: React.CSSProperties;
-  onMouseDown: React.MouseEventHandler<HTMLDivElement>;
-  onMouseMove: React.MouseEventHandler<HTMLDivElement>;
-  onMouseUp: React.MouseEventHandler<HTMLDivElement>;
-  onMouseLeave: React.MouseEventHandler<HTMLDivElement>;
+  onPointerDown: React.PointerEventHandler<HTMLDivElement>;
+  onPointerMove: React.PointerEventHandler<HTMLDivElement>;
+  onPointerUp: React.PointerEventHandler<HTMLDivElement>;
 }) {
   const { setWindows } = useDesktopEnvContext();
 
@@ -23,10 +21,9 @@ export default function WindowTitleBar({
     <div
       className={styles.windowTitleBar}
       style={style}
-      onMouseDown={onMouseDown}
-      onMouseMove={onMouseMove}
-      onMouseUp={onMouseUp}
-      onMouseLeave={onMouseLeave}>
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}>
       <div>{children}</div>
       <div className={styles.windowTitleBarButtons}>
         {/* <WindowButton variant="Minimize" /> */}

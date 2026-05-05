@@ -7,6 +7,8 @@ interface Position {
   y: number;
 }
 
+let activeZIndex = 10;
+
 export default function Window({
   isMinimized,
   title,
@@ -20,12 +22,22 @@ export default function Window({
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState<Position>({ x: 0, y: 0 });
 
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    bringToFront();
+  const bringToFront = () => {
+    if (windowRef.current) {
+      activeZIndex++;
+      windowRef.current.style.zIndex = activeZIndex.toString();
+    }
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!windowRef.current) return;
+    bringToFront();
+    
+    if ((e.target as HTMLElement).closest("button")) return;
+
+    e.currentTarget.setPointerCapture(e.pointerId);
 
     const rect = windowRef.current.getBoundingClientRect();
-
     windowRef.current.style.left = `${rect.left}px`;
     windowRef.current.style.top = `${rect.top}px`;
     windowRef.current.style.transform = "none";
@@ -38,7 +50,7 @@ export default function Window({
     setIsDragging(true);
   };
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!isDragging || !windowRef.current) return;
     const newX = e.clientX - offset.x;
     const newY = e.clientY - offset.y;
@@ -46,30 +58,9 @@ export default function Window({
     windowRef.current.style.top = `${newY}px`;
   };
 
-  const handleMouseUp = () => {
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
     setIsDragging(false);
-  };
-
-  const bringToFront = () => {
-    if (!windowRef.current) return;
-    const currentEl = windowRef.current;
-
-    const allWindows = Array.from(
-      document.querySelectorAll<HTMLElement>('[data-os-window="true"]'),
-    );
-
-    allWindows.sort((a, b) => {
-      const zA = parseInt(a.style.zIndex || "10", 10);
-      const zB = parseInt(b.style.zIndex || "10", 10);
-      return zA - zB;
-    });
-
-    const reorderedWindows = allWindows.filter((w) => w !== currentEl);
-    reorderedWindows.push(currentEl);
-
-    reorderedWindows.forEach((w, index) => {
-      w.style.zIndex = (10 + index).toString();
-    });
+    e.currentTarget.releasePointerCapture(e.pointerId);
   };
 
   useEffect(() => {
@@ -79,17 +70,16 @@ export default function Window({
   if (content)
     return (
       <div
-        onMouseDown={bringToFront}
+        onPointerDown={bringToFront}
         ref={windowRef}
         className={`${styles.window} ${!isMinimized ? styles.open : styles.closed}`}
         data-os-window="true"
         autoFocus>
         <WindowTitleBar
           style={{ cursor: isDragging ? "grabbing" : "grab" }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}>
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}>
           {title}
         </WindowTitleBar>
         <div className={styles.windowContentContainer}>
