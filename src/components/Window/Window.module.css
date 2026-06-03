@@ -15,9 +15,9 @@
 }
 
 .windowContent {
-  box-sizing: border-box; /* CRÍTICO: Obriga o navegador a incluir o padding de 30px DENTRO do limite do max-height */
-  max-height: 70vh; /* Um pouco menor para garantir espaço para a Barra de Título */
-  overflow-y: auto; /* A barra de rolagem passa a existir no container */
+  box-sizing: border-box; 
+  max-height: 70svh; 
+  overflow-y: auto; 
   overflow-x: hidden;
 }
 

@@ -6,13 +6,13 @@ export default function WindowTitleBar({
   children,
   style,
   onPointerDown,
-  onPointerMove,
+  onMouseMove,
   onPointerUp,
 }: {
   children: string;
   style?: React.CSSProperties;
   onPointerDown: React.PointerEventHandler<HTMLDivElement>;
-  onPointerMove: React.PointerEventHandler<HTMLDivElement>;
+  onMouseMove: React.MouseEventHandler<HTMLDivElement>;
   onPointerUp: React.PointerEventHandler<HTMLDivElement>;
 }) {
   const { setWindows } = useDesktopEnvContext();
@@ -22,7 +22,7 @@ export default function WindowTitleBar({
       className={styles.windowTitleBar}
       style={style}
       onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
+      onMouseMove={onMouseMove}
       onPointerUp={onPointerUp}>
       <div>{children}</div>
       <div className={styles.windowTitleBarButtons}>

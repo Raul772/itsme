@@ -32,12 +32,16 @@ export default function Window({
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!windowRef.current) return;
     bringToFront();
-    
+
     if ((e.target as HTMLElement).closest("button")) return;
 
     e.currentTarget.setPointerCapture(e.pointerId);
 
     const rect = windowRef.current.getBoundingClientRect();
+
+    const computedStyle = window.getComputedStyle(windowRef.current);
+    windowRef.current.style.width = computedStyle.width;
+
     windowRef.current.style.left = `${rect.left}px`;
     windowRef.current.style.top = `${rect.top}px`;
     windowRef.current.style.transform = "none";
@@ -78,7 +82,7 @@ export default function Window({
         <WindowTitleBar
           style={{ cursor: isDragging ? "grabbing" : "grab" }}
           onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
+          onMouseMove={handlePointerMove}
           onPointerUp={handlePointerUp}>
           {title}
         </WindowTitleBar>

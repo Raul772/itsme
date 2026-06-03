@@ -2,6 +2,7 @@ import { Projetos } from "../../Constants/Constants";
 import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
 import Badge from "../Global/Badge/Badge";
 import Link from "./Link";
+import { Project } from "./Project/Project";
 import styles from "./Projects.module.css";
 import { IWDCData } from "./Window/WindowContentCard/WindowContentCard";
 
@@ -9,21 +10,15 @@ export default function Projects() {
   const { windows, setWindows } = useDesktopEnvContext();
 
   function handleProjectClick(p: IWDCData) {
-
     const openedWindow = windows && windows.get(p.title);
 
     if (windows && openedWindow) return;
-
-    // setWindows((windows) => {
-    //   if (!windows) return new Map([[window.title, window]]);
-    //   return new Map([...windows, [window.title, window]]);
-    // });
 
     setWindows((windows) => {
       const newWindows = new Map(windows);
       newWindows.set(p.title, {
         title: p.title,
-        content: <p>Em desenvolvimento...</p>,
+        content: <Project data={p} />,
         id: crypto.randomUUID(),
         isMinimized: false,
       });
@@ -45,8 +40,6 @@ export default function Projects() {
               </Badge>
             </div>
           ))}
-
-          {/* <Window setIsOpen={setIsOpen} isOpen={isOpen} data={data} /> */}
         </div>
       </div>
     </section>
