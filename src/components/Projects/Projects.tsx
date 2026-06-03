@@ -1,10 +1,10 @@
 import { Projetos } from "../../Constants/Constants";
 import { useDesktopEnvContext } from "../../contexts/DesktopEnvContext";
+import { IWDCData } from "../../types/IWDCData";
 import Badge from "../Global/Badge/Badge";
 import Link from "./Link";
 import { Project } from "./Project/Project";
 import styles from "./Projects.module.css";
-import { IWDCData } from "./Window/WindowContentCard/WindowContentCard";
 
 export default function Projects() {
   const { windows, setWindows } = useDesktopEnvContext();
