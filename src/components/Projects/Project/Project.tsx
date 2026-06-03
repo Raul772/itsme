@@ -1,4 +1,4 @@
-import { IWDCData } from "../Window/WindowContentCard/WindowContentCard";
+import { IWDCData } from "../../../types/IWDCData";
 import styles from "./Project.module.css";
 
 export const Project = ({ data }: { data: IWDCData }) => {

@@ -66,7 +66,7 @@ export default function Taskbar() {
               key={"About"}
               onClick={() =>
                 handleWindowOpen({
-                  id: Math.random(),
+                  id: crypto.randomUUID(),
                   title: "About",
                   content: <About />,
                   isMinimized: false,
@@ -79,7 +79,7 @@ export default function Taskbar() {
               key={"Projects"}
               onClick={() =>
                 handleWindowOpen({
-                  id: Math.random(),
+                  id: crypto.randomUUID(),
                   title: "Projects",
                   content: <Projects />,
                   isMinimized: false,
@@ -92,7 +92,7 @@ export default function Taskbar() {
               key={"Contact"}
               onClick={() =>
                 handleWindowOpen({
-                  id: Math.random(),
+                  id: crypto.randomUUID(),
                   title: "Contact",
                   content: <Contact />,
                   isMinimized: false,
@@ -105,7 +105,7 @@ export default function Taskbar() {
               key={"Footer"}
               onClick={() =>
                 handleWindowOpen({
-                  id: Math.random(),
+                  id: crypto.randomUUID(),
                   title: "Footer",
                   content: <Footer />,
                   isMinimized: false,
