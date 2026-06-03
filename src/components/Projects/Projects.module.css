@@ -2,9 +2,10 @@
   background: url("../../../assets//distorted_grid.svg") no-repeat center center;
   background-size: cover;
   position: relative;
+  min-width: 600px;
 }
 .projectsContainer {
-  padding: 7.5rem 0px;
+  padding: 3.75rem 0px;
 }
 
 .projectsContainer > h2 {
@@ -13,7 +14,24 @@
 
 .projectsIconContent {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
   place-items: center;
   gap: 5rem;
+  padding: 0px 3.75rem;
+}
+
+@media screen and (width < 600px) {
+  .projects {
+    min-width: 250px;
+  }
+
+  .projectsContainer > h2 {
+    margin-bottom: 3.75rem;
+  }
+
+  .projectsIconContent {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    padding: 0px;
+  }
 }

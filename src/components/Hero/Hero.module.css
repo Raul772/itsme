@@ -6,7 +6,7 @@
 .heroContainer {
   display: flex;
   flex-wrap: wrap-reverse;
-  min-height: 90vh;
+  min-height: 100svh;
   justify-content: center;
   align-items: center;
   text-align: start;
@@ -22,8 +22,8 @@
   }
 }
 
-@media screen and (width < 600px) {
+/* @media screen and (width < 600px) {
   .hero {
     padding: 5vh 0px;
   }
-}
+} */

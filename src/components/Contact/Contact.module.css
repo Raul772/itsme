@@ -1,5 +1,5 @@
 .contact {
-  padding: 7.5rem 0px;
+  padding: 3.75rem 0px;
   background: var(--s10);
 }
 
@@ -8,7 +8,8 @@
 }
 
 .contactElementsHolder {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1.125rem;
+  justify-items: center;
 }

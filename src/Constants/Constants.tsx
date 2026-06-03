@@ -1,6 +1,6 @@
 import convergencia from "../../assets/Convergencia.png";
 import lumixus from "../../assets/Lumixus.png";
-import { IWDCData } from "../components/Projects/Window/WindowContentCard/WindowContentCard";
+import { IWDCData } from "../types/IWDCData";
 
 export const Projetos: IWDCData[] = [
   {

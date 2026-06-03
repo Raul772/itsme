@@ -6,7 +6,7 @@ type LinkProps = {
   img?: string | null;
   children: string;
   shortcut?: boolean;
-  onDoubleClick?: () => void;
+  onClick?: () => void;
 };
 
 export default function Link({
@@ -18,7 +18,7 @@ export default function Link({
 }: LinkProps) {
   
   let el = (
-    <div className={styles.element} onDoubleClick={props.onDoubleClick}>
+    <div className={styles.element} onClick={props.onClick}>
       <div
         className={`${styles.elementSelection} ${shortcut && styles.shortcut}`}>
         <div className={styles.elementOverlay}></div>

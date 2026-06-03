@@ -1,5 +1,5 @@
 import React from "react";
-import { WCCTAGS } from "../../Projects/Window/WindowContentCard/WindowContentCardTags";
+import { WCCTAGS } from "../../../types/WCCTags";
 import styles from "./Badge.module.css";
 
 type BadgeProps = {
