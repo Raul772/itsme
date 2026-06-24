@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [react(), glsl({ include: ["**/*.glsl"] })],
   resolve: {
     alias: {
-      "@assets/": "/src/assets",
-      "@/": "/src",
+      "@assets": "/src/assets",
+      "@": "/src",
     },
   },
 });
