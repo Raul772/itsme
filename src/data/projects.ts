@@ -1,6 +1,6 @@
 import { ProjectData } from "@/types/ProjectData";
-import convergencia from "../../assets/Convergencia.png";
-import lumixus from "../../assets/Lumixus.png";
+import convergencia from "@assets/Convergencia.png";
+import lumixus from "@assets/Lumixus.png";
 
 export const Projetos: ProjectData[] = [
   {
