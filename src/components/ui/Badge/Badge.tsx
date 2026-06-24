@@ -1,10 +1,10 @@
+import { TAGS } from "@/types/Tags";
 import React from "react";
-import { WCCTAGS } from "../../../types/Tags";
 import styles from "./Badge.module.css";
 
 type BadgeProps = {
   type?: "PROJECTTAGS" | "TEXT";
-  content?: (keyof typeof WCCTAGS)[] | string;
+  content?: (keyof typeof TAGS)[] | string;
   children?: React.ReactNode;
 };
 
@@ -14,7 +14,7 @@ export default function Badge({ type, content, children }: BadgeProps) {
       <>
         <div className={styles.badge}>
           {content?.sort().map((e) => (
-            <img key={e} src={WCCTAGS[e]} alt={e} />
+            <img key={e} src={TAGS[e]} alt={e} />
           ))}
         </div>
         {children}
