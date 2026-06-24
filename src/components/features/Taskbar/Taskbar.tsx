@@ -6,7 +6,7 @@ import { useDesktopEnvContext } from "@/contexts/DesktopEnvContext";
 import Window from "@/types/Window";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
-import Footer from "../Credits/Credits";
+import Credits from "../Credits/Credits";
 import Projects from "../Projects/Projects";
 import Button from "@/components/ui/Button/Button";
 import styles from "./Taskbar.module.css";
@@ -101,13 +101,13 @@ export default function Taskbar() {
               Contatos
             </Button>
             <Button
-              aria-label="Footer"
-              key={"Footer"}
+              aria-label="Credits"
+              key={"Credits"}
               onClick={() =>
                 handleWindowOpen({
                   id: crypto.randomUUID(),
-                  title: "Footer",
-                  content: <Footer />,
+                  title: "Creditos",
+                  content: <Credits />,
                   isMinimized: false,
                 })
               }>

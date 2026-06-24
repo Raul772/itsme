@@ -18,7 +18,7 @@ export default function Element({
     <a className={styles.element} {...props} href={href} target="_blank">
       <div
         className={`${styles.elementSelection}  ${
-          shortcut && styles.shortcut
+          shortcut ? styles.shortcut : ""
         }`}>
         <div className={styles.elementOverlay}></div>
         <img className={styles.elementImage} src={img} alt="" />
