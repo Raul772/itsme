@@ -1,8 +1,8 @@
-import "./Global.css";
-import DesktopEnvironment from "./components/DesktopEnvironment/DesktopEnvironment";
-import Hero from "./components/Hero/Hero";
+import DesktopEnvironment from "@/components/features/DesktopEnvironment/DesktopEnvironment";
+import Hero from "@/components/features/Hero/Hero";
 import { ClientContextProvider } from "./contexts/ClientContext";
 import { DesktopEnvContextProvider } from "./contexts/DesktopEnvContext";
+import "./Global.css";
 
 function App() {
   return (
