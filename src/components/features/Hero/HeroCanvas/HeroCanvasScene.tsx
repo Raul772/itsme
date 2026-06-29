@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 import { shaderMaterial } from "@react-three/drei";
-import { extend, useFrame, useThree } from "@react-three/fiber";
+import { extend, useFrame } from "@react-three/fiber";
 
 import * as THREE from "three";
 
@@ -13,10 +13,10 @@ import { CustomPlaneMaterialType } from "./types/CustomPlaneMaterialType";
 
 const CustomPlaneMaterial = shaderMaterial(
   {
-    uColor1: new THREE.Color("#f6daf5"), 
-    uColor2: new THREE.Color("#e4f1fc"), 
-    uColor3: new THREE.Color("#cde0f9"), 
-    uColor4: new THREE.Color("#faebf9"), 
+    uColor1: new THREE.Color("#f6daf5"),
+    uColor2: new THREE.Color("#e4f1fc"),
+    uColor3: new THREE.Color("#cde0f9"),
+    uColor4: new THREE.Color("#faebf9"),
     uIntensity: 1,
     uTime: 0,
   },
@@ -26,12 +26,17 @@ const CustomPlaneMaterial = shaderMaterial(
 
 extend({ CustomPlaneMaterial });
 
-export default function Scene() {
+export default function Scene({ isPaused }: { isPaused: boolean }) {
   const materialRef = useRef<CustomPlaneMaterialType>(null);
 
-  useFrame((state) => {
+  const accumulatedTime = useRef(0);
+
+  useFrame((state, delta) => {
     if (materialRef.current) {
-      materialRef.current.uTime = state.clock.elapsedTime;
+      if (!isPaused) {
+        accumulatedTime.current += Math.min(0.1, delta);
+      }
+      materialRef.current.uTime = accumulatedTime.current;
     }
   });
 
